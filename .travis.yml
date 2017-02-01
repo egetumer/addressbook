@@ -3,3 +3,11 @@ install:
 - mvn install
 jdk:
 - oraclejdk8
+deploy:
+  provider: heroku
+  api_key:
+    secure: YIh1HyNRvQ5pYErzZ7hD0osjNQ2tzX6n77/JoyblHHw9DfgvNMwnPYvjNGFGDFO56IYfdEFNeQ3i61IkE81dBgVYw8/Y1qgecFDxk4nMfdAu9JbD2vJ/wKnV4q5z2JvUj9X/Uth7c8rkDtIgOIiDovb+nhGFwVzArcKfuANIux3Yq8SCtMFqjhtvWuqXAHwHdTQ5B+doVFRlt2/SyfId8iT19+X/zsFE6D3/pCELwm7kQAIP3tZm5mbgbVExbQfK2MDcTntEBPo9Nymejc07C/2UWPZZOBVMVDHD4DcMJ/r9IqM3/rnBWRw5jp3pr7cp9pXByH/VSsvhUCy/N/76GMPeT8WUdEJgidrRS7Gn0lPCNnm2M+tVej2EtWNEduvGgX7otmPxrr6NqE5fzVIqnRZrIxEDWrR6ad7FSB1kzxvK+mwLQkzm1ivx9b4Ly/y2W4NM7U/V0UJTqjB1USRGBSmQkznPdWPYpnBxzyoIckF3/JsuDcomU/VwB2oCQxrF4jiH+V5p6GhIsC1PdbGkOde5ZvCiB6PZCSAIx79cH/BEgJIJ3TAJb+4vIGROmVUksd9zzJnC5OnZcIlIw9FoM+aDO8pakzhNuoyG5owpQmDxRCqagmSFFsOBrk/KQm22O2HuJwYpq2dN0RK55T4TnxAAmDBoluRqe17qY9Vg3h8=
+  app: egetumer-addressbook
+  on:
+    repo: egetumer/addressbook
+    branch: todo_tasks
