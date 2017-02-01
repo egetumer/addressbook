@@ -5,7 +5,8 @@ jdk:
 - oraclejdk8
 deploy:
   provider: heroku
-  api_key: 14678da7-9359-4f94-93e7-65717173f62c
+  api_key:
+    secure: F+wgQOu5ud0S0i/I0Yw1XR2G+vAoLuNGgbMb6PGi2wiY7pNvBE6uNBDwaanH2ZYbBacxTQrfEqVnTA5x2ZklXUBG+gMUhne9iyv/IJjRx0dPfVNUjH0BWRS9qOawZSWdHDdcOg5WnUT++I8a2RUIiYZLRdz5XV6eKnSDJiNjvE36ap063sKOnUKHmFcDPvxj9cgLz/rxoZqqDyxCWmbfdB8QFAj1BRKAVvcHF6GvduXJeWuhkqebXM4yjYMx86W1N8WaVvWKVnShHu6NF/x6I11xDNyykSwsVrilUAe1x+iCz0bXxW4ccLK5D64l9t2Be3rFIGa1OWaM3g92CLuU3mkPlGPlvT3La2Foj753Bo6mocR+O/lZIEwzJoW5QODcDiGxAwG/UhRf6WCm+ECsQrdfKEkqpWKAjbyT1fkgfBxtUl72TwjLCPSkbcAhS0FTVo3W7TWj7WVwpPlEdvnXcnqkHpO3r80xef3zYnkfr2pzLaVVyMbl9c3iBjYu6Z4g3JJzxxsLmUHzGzqF5Oh9BIbvi49VxjaAZMKavsrWQToh9DxDmyLPoN+s46fF9qg97fNxumgUn+abT5p8LlY201Mz45ONxWrxlxN8HLsg/ZQLX8ckE33aSb6BlZD5XO9G/FY8kWtxjaBs8eZo0xSME3Qybrpb5kGQBETn0tvfEdU=
   app: egetumer-addressbook
   on:
     repo: egetumer/addressbook
