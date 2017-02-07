@@ -24,6 +24,10 @@ public class ContactService {
             "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor",
             "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin",
             "Thompson", "Young", "King", "Robinson" };
+    // task names are placeholder and could be changed with meaningful ones
+    static String[] tasks = { "task0", "task1", "task2", "task3", "task4", "task5",
+    		"task6", "task7", "task8", "task9", "task10", "task11", "task12", "task13",
+    		"task14", "task15", "task16", "task17", "task18", "task19", "task20" };
 
     private static ContactService instance;
 
@@ -41,9 +45,15 @@ public class ContactService {
                 contact.setEmail(contact.getFirstName().toLowerCase() + "@"
                         + contact.getLastName().toLowerCase() + ".com");
                 contact.setPhone("+ 358 555 " + (100 + r.nextInt(900)));
-                cal.set(1930 + r.nextInt(70),
-                        r.nextInt(11), r.nextInt(28));
+                cal.set(1930 + r.nextInt(70), r.nextInt(11), r.nextInt(28));
                 contact.setBirthDate(cal.getTime());
+                contact.setTask(tasks[r.nextInt(tasks.length)]);
+                cal.set(2010 + r.nextInt(6), r.nextInt(11), r.nextInt(28));
+                contact.setTaskStart(cal.getTime());
+                cal.set(cal.get(Calendar.YEAR) + r.nextInt(10), r.nextInt(11), 
+                		r.nextInt(28));
+                contact.setTaskEnd(cal.getTime()); 
+                // does not check if end date comes before start date
                 contactService.save(contact);
             }
             instance = contactService;

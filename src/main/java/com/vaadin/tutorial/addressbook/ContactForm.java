@@ -25,11 +25,15 @@ public class ContactForm extends FormLayout {
 
     Button save = new Button("Save", this::save);
     Button cancel = new Button("Cancel", this::cancel);
+    Button remove = new Button("Remove", this::remove);
     TextField firstName = new TextField("First name");
     TextField lastName = new TextField("Last name");
-    TextField phone = new TextField("Phone");
-    TextField email = new TextField("Email");
-    DateField birthDate = new DateField("Birth date");
+    // TextField phone = new TextField("Phone");
+    // TextField email = new TextField("Email");
+    // DateField birthDate = new DateField("Birth date");
+    TextField task = new TextField("To-do Task");
+    DateField taskStart = new DateField("Start Date");
+    DateField taskEnd = new DateField("Expected End Date");
 
     Contact contact;
 
@@ -60,7 +64,7 @@ public class ContactForm extends FormLayout {
         HorizontalLayout actions = new HorizontalLayout(save, cancel);
         actions.setSpacing(true);
 
-        addComponents(actions, firstName, lastName, phone, email, birthDate);
+        addComponents(actions, firstName, lastName, task, taskStart, taskEnd);
     }
 
     /*
@@ -89,6 +93,22 @@ public class ContactForm extends FormLayout {
         } catch (FieldGroup.CommitException e) {
             // Validation exceptions could be shown here
         }
+    }
+    
+    // Attempt to create remove button
+    public void remove(Button.ClickEvent event) {
+    	try {
+    	formFieldBindings.commit();
+    	
+    	getUI().service.delete(contact);
+    	
+    	String msg = String.format("Removed '%s %s'", contact.getFirstName(),
+    			contact.getLastName());
+    	Notification.show(msg, Type.TRAY_NOTIFICATION);
+    	getUI().refreshContacts();
+    	} catch (FieldGroup.CommitException e) {
+    		
+    	}
     }
 
     public void cancel(Button.ClickEvent event) {
