@@ -96,7 +96,7 @@ public class ContactService {
 
     public synchronized void delete(Contact value) {
         contacts.remove(value.getId());
-    }
+    } // 
 
     public synchronized void save(Contact entry) {
         if (entry.getId() == null) {
